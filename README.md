@@ -1,5 +1,3 @@
-![Icon](icon.svg)
-
 [![Latest Version](https://img.shields.io/github/release/riasvdv/statamic-button-box.svg?style=flat-square)](https://github.com/riasvdv/statamic-button-box/releases)
 
 # Button Box

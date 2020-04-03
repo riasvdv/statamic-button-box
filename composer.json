@@ -1,5 +1,5 @@
 {
-    "name": "rias/button-box",
+    "name": "rias/statamic-button-box",
     "type": "statamic-addon",
     "autoload": {
         "psr-4": {

@@ -24,6 +24,8 @@ class ServiceProvider extends AddonServiceProvider
 
     public function boot()
     {
+        parent::boot();
+
         $this->publishes([__DIR__.'/../config/button-box.php' => config_path('statamic/button-box.php')]);
         $this->mergeConfigFrom(__DIR__.'/../config/button-box.php', 'statamic.button-box');
     }

@@ -1,9 +1,9 @@
 <template>
-    <div class="button_box-fieldtype-wrapper flex -mx-2">
+    <div class="button_box-fieldtype-wrapper flex -mx-1">
         <div
                 v-for="(option, $index) in options"
                 :key="$index"
-                class="px-2"
+                class="px-1"
         >
             <button
                 v-if="option.image.length > 0 || !option.icon"
@@ -20,7 +20,7 @@
                 :id="name + $index"
                 @click.prevent="update(option.value)"
                 :class="[
-                    'flex items-center justify-center btn-flat mx-1 w-16 h-12 leading-loose',
+                    'flex items-center justify-center btn-flat w-16 h-12 leading-loose',
                     option.value === value ? 'border-primary border-2 rounded p-px' : 'border-2 rounded border-white p-px'
                 ]"
             >
