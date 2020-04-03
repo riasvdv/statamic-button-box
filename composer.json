@@ -1,0 +1,27 @@
+{
+    "name": "rias/button-box",
+    "type": "statamic-addon",
+    "autoload": {
+        "psr-4": {
+            "Rias\\ButtonBox\\": "src"
+        }
+    },
+    "require":  {
+        "pixelfear/composer-dist-plugin": "^0.1.0"
+    },
+    "extra": {
+        "download-dist": {
+            "url": "https://github.com/riasvdv/statamic-button-box/releases/download/{$version}/dist.tar.gz",
+            "path": "dist"
+        },
+        "statamic": {
+            "name": "Button Box",
+            "description": "Button Box addon"
+        },
+        "laravel": {
+            "providers": [
+                "Rias\\ButtonBox\\ServiceProvider"
+            ]
+        }
+    }
+}
