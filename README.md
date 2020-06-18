@@ -70,8 +70,6 @@ sections:
 
 ## Using Button Box
 
-You can access both the label and color in your template.
-
 ```twig
 {{ choice }} # will contain either "left", "center" or "right" from the example above
 ```
