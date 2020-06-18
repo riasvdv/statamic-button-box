@@ -2,7 +2,7 @@
 
 # Button Box
 
-> Button Box for Statamic 3.
+> Button Box for Statamic 2.
 
 Create beautiful choices for your clients.
 
@@ -17,17 +17,7 @@ You may use Button Box without a license while Statamic is in [Trial mode](https
 
 ## Installation
 
-Require it using Composer.
-
-```
-composer require rias/statamic-button-box
-```
-
-Publish the assets and configuration:
-
-```
-php artisan vendor:publish --provider="Rias\ButtonBox\ServiceProvider"
-```
+Download the latest release and copy the `ButtonBox` folder to your `site/addons` folder.
 
 ## Using Button Box
 
@@ -37,7 +27,7 @@ Each option contains the following fields:
 
 - label - This is show when neither an icon or an image is present
 - value - The value that you'll use in your templates
-- image - An image
+- image - The full url to your image
 - icon - A [FontAwesome Free](https://fontawesome.com/icons?d=gallery&m=free) icon
 
 ```yaml
@@ -54,41 +44,24 @@ sections:
             -
               label: Left
               value: left
-              image: left.svg
+              image: /assets/left.svg
               icon: null
             -
               label: Center
               value: center
-              image: center.svg
+              image: /assets/center.svg
               icon: null
             -
               label: Right
               value: right
-              image: right.svg
+              image: /assets/right.svg
               icon: null
 ```
 
 ## Using Button Box
 
-You can access both the label and color in your template.
-
 ```twig
 {{ choice }} # will contain either "left", "center" or "right" from the example above
-```
-
-## Using a different Asset container
-
-Button Box comes with a configuration file that you can change after publishing, it will live at `config/statamic/button-box.php`, here you can define the handle of the Asset Container that has to be used for the images.
-
-```php
-return [
-    /**
-     * If you want Button Box to use a different container
-     * you can define the container handle to be used.
-     */
-    'container' => null,
-];
-
 ```
 
 Brought to you by [Rias](https://rias.be)
