@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require("laravel-mix");
 
-mix.js('resources/js/button-box.js', 'dist/js');
-mix.postCss('resources/css/button-box.css', 'dist/css');
+mix.js("resources/js/button-box.js", "dist/js");
+mix.postCss("resources/css/button-box.css", "dist/css");

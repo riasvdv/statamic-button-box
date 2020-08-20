@@ -1,32 +1,34 @@
 <template>
-    <img :src="src" alt="" style="vertical-align: top;">
+  <img :src="src" alt="" style="vertical-align: top;" />
 </template>
 
 <script>
-    export default {
-        mixins: [Fieldtype],
+export default {
+  mixins: [Fieldtype],
 
-        props: ['id'],
+  props: ["id"],
 
-        data() {
-            return {
-                src: '',
-            }
-        },
-
-        mounted() {
-           this.getImage(this.id);
-        },
-
-        methods: {
-            getImage(id) {
-                const vm = this;
-                this.$axios.get(cp_url('assets-fieldtype'), {
-                    params: { assets: [id] }
-                }).then(response => {
-                    vm.src = response.data[0].url;
-                });
-            }
-        }
+  data() {
+    return {
+      src: ""
     };
+  },
+
+  mounted() {
+    this.getImage(this.id);
+  },
+
+  methods: {
+    getImage(id) {
+      const vm = this;
+      this.$axios
+        .get(cp_url("assets-fieldtype"), {
+          params: { assets: [id] }
+        })
+        .then(response => {
+          vm.src = response.data[0].url;
+        });
+    }
+  }
+};
 </script>
