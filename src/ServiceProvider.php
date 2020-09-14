@@ -18,15 +18,15 @@ class ServiceProvider extends AddonServiceProvider
         __DIR__.'/../dist/css/button-box.css',
     ];
 
-    protected $externalScripts = [
-        'https://kit.fontawesome.com/717c607586.js',
-    ];
-
     public function boot()
     {
         parent::boot();
 
         $this->publishes([__DIR__.'/../config/button-box.php' => config_path('statamic/button-box.php')]);
+        $this->publishes([
+            __DIR__.'/../dist' => public_path('vendor/statamic-button-box'),
+        ], 'statamic-button-box');
+
         $this->mergeConfigFrom(__DIR__.'/../config/button-box.php', 'statamic.button-box');
     }
 }
