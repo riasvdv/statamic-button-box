@@ -12,13 +12,8 @@ class ButtonBoxListener extends Listener
      * @var array
      */
     public $events = [
-        'cp.add_to_head' => ['addFontAwesome', 'addCss'],
+        'cp.add_to_head' => ['addCss'],
     ];
-
-    public function addFontAwesome()
-    {
-        return $this->js->inline(file_get_contents('https://kit.fontawesome.com/717c607586.js'));
-    }
 
     public function addCss()
     {
