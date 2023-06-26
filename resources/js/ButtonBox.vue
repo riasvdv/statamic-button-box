@@ -25,9 +25,9 @@
         :id="name + $index"
         @click.prevent="update(option.value)"
         :class="[
-          'flex items-center justify-center btn-flat w-16 h-12 leading-loose',
+          'flex items-center justify-center btn-flat w-12 h-12 leading-loose',
           option.value === value
-            ? 'border-primary border-2 rounded p-px'
+            ? 'border-blue-400 border-2 rounded p-px'
             : 'border-2 rounded border-white p-px'
         ]"
       >
