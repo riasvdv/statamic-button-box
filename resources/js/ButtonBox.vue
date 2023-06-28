@@ -7,7 +7,7 @@
         @click.prevent="update(option.value)"
         :class="
           option.value === value
-            ? 'border-primary border-2 rounded p-px'
+            ? 'border-blue-400 border-2 rounded p-px'
             : 'border-2 rounded border-white p-px'
         "
       >

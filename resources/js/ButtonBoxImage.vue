@@ -19,11 +19,11 @@ export default {
   },
 
   methods: {
-    getImage(id) {
+    getImage(assets) {
       const vm = this;
       this.$axios
-        .get(cp_url("assets-fieldtype"), {
-          params: { assets: [id] }
+        .post(cp_url('assets-fieldtype'), {
+          assets,
         })
         .then(response => {
           vm.src = response.data[0].url;
