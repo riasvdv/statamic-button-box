@@ -10,12 +10,12 @@ class ServiceProvider extends AddonServiceProvider
         ButtonBox::class,
     ];
 
-    protected $scripts = [
-        __DIR__.'/../dist/js/button-box.js',
-    ];
-
-    protected $stylesheets = [
-        __DIR__.'/../dist/css/button-box.css',
+    protected $vite = [
+        'input' => [
+            'resources/js/button-box.js',
+        ],
+        'publicDirectory' => 'dist',
+        'hotFile' => __DIR__.'/../dist/hot',
     ];
 
     public function boot()

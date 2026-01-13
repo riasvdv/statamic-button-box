@@ -1,7 +1,7 @@
-import ButtonBoxImage from "./ButtonBoxImage";
-import ButtonBox from "./ButtonBox";
+import ButtonBoxImage from "./ButtonBoxImage.vue";
+import ButtonBox from "./ButtonBox.vue";
 
 Statamic.booting(() => {
-  Statamic.component("button_box-image", ButtonBoxImage);
-  Statamic.component("button_box-fieldtype", ButtonBox);
+    Statamic.$components.register("button_box-image", ButtonBoxImage);
+    Statamic.$components.register("button_box-fieldtype", ButtonBox);
 });

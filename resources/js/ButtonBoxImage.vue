@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import { FieldtypeMixin } from '@statamic/cms';
+
 export default {
-  mixins: [Fieldtype],
+  mixins: [FieldtypeMixin],
 
   props: ["id"],
 

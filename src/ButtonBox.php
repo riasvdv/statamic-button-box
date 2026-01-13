@@ -4,15 +4,22 @@ namespace Rias\ButtonBox;
 
 use Statamic\Facades\AssetContainer;
 use Statamic\Fields\Fieldtype;
+use Statamic\Statamic;
 
 class ButtonBox extends Fieldtype
 {
+    public function icon()
+    {
+        return 'container-add';
+    }
+
     protected function configFieldItems(): array
     {
         return [
             'options' => [
                 'type' => 'grid',
                 'min_rows' => 1,
+                'mode' => 'stacked',
                 'fields' => [
                     'label' => [
                         'handle' => 'label',
@@ -39,9 +46,8 @@ class ButtonBox extends Fieldtype
                     'icon' => [
                         'handle' => 'icon',
                         'field' => [
-                            'type' => 'text',
-                            'prepend' => 'fa-',
-                            'instructions' => 'Choose an icon from the free FontAwesome icons'
+                            'type' => 'icon',
+                            'instructions' => 'Choose an icon'
                         ],
                     ],
                 ],

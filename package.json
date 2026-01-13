@@ -1,21 +1,15 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "npx mix",
-    "development": "npx mix",
-    "watch": "npx mix watch",
-    "prod": "npx mix --production",
-    "production": "npx mix --production",
+    "build": "vite build",
+    "dev": "vite",
     "format": "prettier 'resources/**/*.{css,js,json,css,ts,tsx,vue}' '*.{js,css}' --write"
   },
   "devDependencies": {
-    "laravel-mix": "^6.0",
-    "postcss": "^8.1",
+    "@statamic/cms": "file:./vendor/statamic/cms/resources/dist-package",
+    "laravel-vite-plugin": "^1.2.0",
     "prettier": "^1.18.2",
-    "vue-loader": "^15.9.5",
-    "vue-template-compiler": "^2.6.12"
-  },
-  "dependencies": {
-    "vue": "^2.6.12"
+    "vite": "^6.3.4"
   }
 }

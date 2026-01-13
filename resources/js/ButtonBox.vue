@@ -1,45 +1,44 @@
 <template>
-  <div class="button_box-fieldtype-wrapper flex -mx-1">
+  <div class="button_box-fieldtype flex -mx-1">
     <div v-for="(option, $index) in options" :key="$index" class="px-1">
-      <button
+      <Button
         v-if="option.image.length > 0 || !option.icon"
         :id="name + $index"
         @click.prevent="update(option.value)"
-        :class="
-          option.value === value
-            ? 'border-blue-400 border-2 rounded p-px'
-            : 'border-2 rounded border-white p-px'
-        "
+        size="lg"
+        :variant="option.value === value ? 'pressed' : 'filled'"
+        :text="!option.image.length > 0 && option.icon ? (option.label || option.value) : ''"
+        style="height: 8rem; padding: 1rem;"
       >
-        <span v-if="!option.image.length > 0 && !option.icon">{{
-          option.label || option.value
-        }}</span>
-
-        <button_box-image
-          v-if="option.image.length > 0"
-          :id="option.image[0]"
-        />
-      </button>
-      <button
+          <button_box-image
+              class="h-24"
+            v-if="option.image.length > 0"
+            :id="option.image[0]"
+          />
+      </Button>
+      <Button
         v-else
         :id="name + $index"
         @click.prevent="update(option.value)"
-        :class="[
-          'flex items-center justify-center btn-flat w-12 h-12 leading-loose',
-          option.value === value
-            ? 'border-blue-400 border-2 rounded p-px'
-            : 'border-2 rounded border-white p-px'
-        ]"
-      >
-        <i :class="'text-lg text-grey-80 far fa-' + option.icon"></i>
-      </button>
+        :variant="option.value === value ? 'pressed' : 'default'"
+        :icon="option.icon"
+        size="lg"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import { FieldtypeMixin } from '@statamic/cms';
+import { Button, Icon } from '@statamic/cms/ui';
+
 export default {
-  mixins: [Fieldtype],
+  mixins: [FieldtypeMixin],
+
+  components: {
+    Button,
+    Icon,
+  },
 
   computed: {
     options() {
@@ -47,7 +46,8 @@ export default {
     },
 
     replicatorPreview() {
-      var option = _.findWhere(this.config.options, { value: this.value });
+      var option = this.config.options.find(o => o.value === this.value);
+
       return option ? option.label : this.value;
     }
   },
